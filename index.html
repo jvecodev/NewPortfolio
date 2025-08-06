@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="./assets/darkmode.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link
       rel="shortcut icon"
       href="./assets/icon/favicon.ico"
@@ -68,8 +69,66 @@
       </main>
     </header>
 
-    <script src="./script/darkmode.js"></script>
+    <div class="content" id="home">
+      <main class="sumary">
+        <main class="title">
+          <h2 data-lang="pt">Olá!</h2>
+          <h2 data-lang="en" style="display: none">Hello!</h2>
+          <h1 data-lang="pt">Eu sou o João</h1>
+          <h1 data-lang="en" style="display: none">I'm John</h1>
+
+          <p class="typed-text"></p>
+          <p data-lang="en" style="display: none" class="typed-text"></p>
+        </main>
+        <main class="redes">
+          <a href="mailto:jvitor.oliveira1803@gmail.com" target="_blank"
+            ><i class="bi bi-envelope-fill"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/jwoliveira/" target="_blank"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+          <a href="https://github.com/jvEcodev" target="_blank"
+            ><i class="bi bi-github"></i
+          ></a>
+        </main>
+      </main>
+      <main class="rightSide">
+        <img src="assets/img/me.jpg" alt="" />
+      </main>
+    </div>
+    <div class="about" id="sobre">
+      
+      
+      <main>
+        <img src="assets/img/IA.jpg" alt="" />
+        <div class="textAbout">
+            <h1 data-lang="pt">Sobre mim</h1>
+            <h1 data-lang="en" style="display: none">About me</h1>
+            <p data-lang="pt">
+              Sou graduando em Sistemas de Informação na PUC-PR, em Curitiba.
+              Estagiei como desenvolvedor full stack, possuindo experiência prática
+              em desenvolvimento mobile com React Native e Expo, desktop com
+              ElectronJS, front-end utilizando React, NextJS, JavaScript puro, HTML,
+              CSS e Tailwind CSS. No back-end, trabalho com , NodeJS, Laravel,
+              Python, além de experiência em DevOps com Git, GitHub e Docker, foi um
+              grande ciclo de desafios solucionados e conhecimento adquirido.
+            </p>
+            <p data-lang="en" style="display: none">
+              I'm an Information Systems major at PUC-PR in Curitiba. I interned as
+              a full-stack developer, gaining practical experience in mobile
+              development with React Native and Expo, desktop development with
+              ElectronJS, and front-end development using React, NextJS, pure
+              JavaScript, HTML, CSS, and Tailwind CSS. Without a back-end, I work
+              with NodeJS, Laravel, Python, and DevOps experience with Git, GitHub,
+              and Docker. It was a great cycle of challenges solved and knowledge
+              gained.
+            </p>
+        </div>
+      </main>
+    </div>
+
     <script src="./script/scriptTranslate.js"></script>
+    <script src="./script/script.js"></script>
     <script>
       document.querySelector(".hamburguer").addEventListener("click", () => {
         document.querySelector(".menu").classList.toggle("active");
