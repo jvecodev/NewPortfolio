@@ -1,0 +1,145 @@
+/* configurações globais */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Barriecito&family=Playwrite+GB+S+Guides:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root{
+    --font-main: 'Poppins', sans-serif;
+}
+
+
+body {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    display: flex;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+   
+}
+
+
+/* header */
+
+.navbar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+.navbar > .contentNav > .lenguage > button > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: contrast(1.5);
+}
+
+.navbar > .contentNav > .lenguage > button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.navbar > .contentNav > .lenguage > button > img:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+.navbar > .contentNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    font-weight: lighter;
+}	
+
+.navbar > .contentNav > .inicio > a {
+    font-size: 2rem;
+    color: #FFB437;
+    display: flex;
+    font-family: 'MinhaFonte';
+    text-decoration: none;
+}
+
+.navbar > .contentNav > .menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 1rem;
+}
+
+.navbar > .contentNav > .menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.navbar > .contentNav > .menu ul li a:hover {
+    text-decoration: underline black 2px solid; 
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #c2c4c35b;
+    border-radius: 60px;
+    cursor: pointer;
+    padding: 20px;
+    width: 90px;
+    position: relative; 
+    transition: background-color 0.2s linear;
+    display: flex;
+    align-items: center;
+}
+
+.label .ball {
+    background-color: #FFB437;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    height: 30px;
+    width: 30px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(36px);
+}
+
+/* Custom Scrollbar */
+
+body::-webkit-scrollbar {
+    width: 12px;
+    background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-color: #FFB437;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #f5d57e;
+}
+
+
+
+
