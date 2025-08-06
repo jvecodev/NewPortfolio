@@ -11,7 +11,8 @@ document.querySelectorAll('ul a').forEach(anchor => {
 document.addEventListener("DOMContentLoaded", () => {
     var typed = new Typed('.typed-text', {
         
-        strings:['@Wise Trainee 6.0'],
+        strings:['Software Engineer'],
+        
         typeSpeed: 80,
         backSpeed: 60,
         loop: false
