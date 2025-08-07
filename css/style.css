@@ -14,15 +14,28 @@
 }
 
 
+
 body {
     font-family: var(--font-main);
-    font-size: 1rem;
     display: flex;
     background-color: #ffffff   ;
     flex-direction: column;
     align-items: center;
     justify-content: center;    
-   
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background: #ffb637;
+    border-radius: 0 0 50% 50%;
+    pointer-events: none;
+    z-index: 0;
 }
 
 
@@ -30,14 +43,22 @@ body {
 
 .navbar {
     display: flex;
-    width: 100%;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.118);
+    backdrop-filter: var(--blur);
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
     position: fixed;
-    top: 0;
-    background-color: #ffffff;
-    z-index: 1000;
+    z-index: 1001;
+    padding: 5px 5px;
+    top: 10px;
+    border-radius: 20px;
 }
 
+.navbar:hover {
+    transform: translateY(-5px);
+}
 .navbar > .contentNav > .lenguage > button > img {
     width: 40px;
     height: 40px;
@@ -60,34 +81,28 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1rem;
+    padding: 0 1rem;
     font-weight: lighter;
 }	
 
-.navbar > .contentNav > .inicio > a {
-    font-size: 2rem;
-    color: #FFB437;
-    display: flex;
-    font-family: 'MinhaFonte';
-    text-decoration: none;
-}
+
 
 .navbar > .contentNav > .menu ul {
     display: flex;
     gap: 2rem;
     list-style: none;
-    padding: 1rem;
+    padding-top: 1rem;
 }
 
 .navbar > .contentNav > .menu ul li a {
     text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
+    color: rgb(97, 97, 97);
+    font-size: 1.1rem;
     font-weight: 100;
 }
 
 .navbar > .contentNav > .menu ul li a:hover {
-    text-decoration: underline black 2px solid; 
+    text-decoration: underline rgb(97, 97, 97) 2px solid; 
 }
 
 
@@ -108,6 +123,8 @@ body {
     transition: background-color 0.2s linear;
     display: flex;
     align-items: center;
+        border: white 2px solid;
+
 }
 
 .label .ball {
@@ -117,6 +134,7 @@ body {
     top: 5px;
     left: 6px;
     height: 30px;
+    border: white 2px solid;
     width: 30px;
     transform: translateX(0px);
     transition: transform 0.2s linear;
@@ -152,8 +170,8 @@ body::-webkit-scrollbar-thumb:hover {
     align-items: center;
     width: 100%;
     height: 90vh;
-    margin-top: 100px;
-
+    position: relative;
+    z-index: 2;
 }
 
 .content > .sumary{
@@ -174,23 +192,23 @@ body::-webkit-scrollbar-thumb:hover {
 .content > .sumary > .title > h1{
     font-size: 3rem;
     font-weight: bold;
-    color: #FFB437;
+    color: #ffffff;
 }
 
 .content > .sumary > .title > h2{
     font-size: 2rem;
     font-weight: lighter;
-    color: #424242;
+    color: rgb(97, 97, 97);
 }
 .content > .sumary > .title > .typed-text{
     font-size: 1.5rem;
     font-weight: lighter;
-    color: #424242;
+    color: rgb(97, 97, 97);
 }
 .content > .sumary > .title > .work{
     font-size: 1.2rem;
     font-weight: lighter;
-    color: #FFB437;
+    color: #ffffff;
 }
 
 
@@ -310,5 +328,38 @@ body::-webkit-scrollbar-thumb:hover {
 .about .btn-primary i {
     font-size: 1.1rem;
 }
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #FFB437;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(255, 180, 55, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
 
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background-color: #f5d57e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 180, 55, 0.4);
+}
 
