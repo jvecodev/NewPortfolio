@@ -37,3 +37,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+function getProjects() {
+    const projetos = document.querySelector('.aboutPro');   
+    if (projetos) {
+        projetos.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projetos = document.querySelectorAll('.imagensprojetos');
+
+    projetos.forEach(projeto => {
+        projeto.addEventListener('mouseover', () => {
+            const overlay = projeto.querySelector('.overlay');
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'auto';
+        });
+
+        projeto.addEventListener('mouseout', () => {
+            const overlay = projeto.querySelector('.overlay');
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+        });
+    });
+});
