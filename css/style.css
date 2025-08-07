@@ -96,7 +96,7 @@ body::before {
   text-decoration: none;
   color: rgb(97, 97, 97);
   font-size: 1.1rem;
-  font-weight: 100;
+  font-weight: bolder;
 }
 
 .navbar > .contentNav > .menu ul li a:hover {
@@ -196,7 +196,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .content > .sumary > .title > h2 {
   font-size: 2rem;
-  font-weight: lighter;
+  font-weight: Bold;
   color: rgb(97, 97, 97);
 }
 .content > .sumary > .title > .typed-text {
@@ -212,7 +212,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .content > .sumary > .redes > a {
   text-decoration: none;
-  color: #f5d57e;
+  color: #ffb437;
   font-size: 2.5rem;
   font-weight: lighter;
   margin: 10px;
@@ -327,7 +327,7 @@ body::-webkit-scrollbar-thumb:hover {
   right: 30px;
   width: 50px;
   height: 50px;
-  background-color: #ffb437;
+  background-color: #ff5e00;
   color: white;
   border: none;
   border-radius: 50%;
