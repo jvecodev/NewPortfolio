@@ -395,7 +395,9 @@
         <h2 data-lang="en" style="display: none">Get in Touch</h2>
 
         <div class="form-group">
-          <input type="text" name="name" required placeholder="Nome" />
+          <input type="text" name="name" required placeholder="Nome" data-lang="pt" />
+          <input type="text" name="name" required placeholder="Name" data-lang="en" style="display: none" />
+          
         </div>
 
         <div class="form-group">
@@ -413,6 +415,13 @@
             placeholder="Mensagem"
             required
           ></textarea>
+          <textarea
+            name="message"
+            id=""
+            placeholder="Message"
+            required
+            style="display: none"
+          ></textarea>
         </div>
 
         <input type="hidden" name="_next" value="./email.html" />
@@ -422,6 +431,11 @@
         </button>
       </form>
     </div>
+    <footer class="footer">
+      <p>&copy; 2025 Personal Portfolio.</p>
+      <p data-lang="pt">Desenvolvido por João Vitor Oliveira</p>
+      <p data-lang="en" style="display: none">Developed by João Vitor Oliveira</p>
+    </footer>
 
     <button class="scroll-top" id="scrollTop">
       <i class="bi bi-arrow-up"></i>
