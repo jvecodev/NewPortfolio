@@ -1,46 +1,66 @@
 
-/* Smooth scroll para links de navegação */
+
 html {
   scroll-behavior: smooth;
 }
 
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* Classes simples para scroll */
+
+/* Classes para scroll bidirecional */
 .fade-in-scroll {
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-up-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fade-in-scroll.show,
+.slide-left-scroll {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-right-scroll {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+/* Estados ativos (quando .show é adicionado) */
+.fade-in-scroll.show {
+  opacity: 1;
+}
+
 .slide-up-scroll.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.simple-fade {
-  animation: fadeIn 0.8s ease-out;
+.slide-left-scroll.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right-scroll.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+
+/* Melhoria na suavidade das transições */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 

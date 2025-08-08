@@ -61,16 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Sistema de animação bidirecional (scroll up e down)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Elemento entra na viewport - adiciona animação
                 entry.target.classList.add('show');
+            } else {
+                // Elemento sai da viewport - remove animação para reativar
+                entry.target.classList.remove('show');
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.15, // 15% do elemento precisa estar visível
+        rootMargin: '0px 0px -50px 0px' // Margem para trigger mais preciso
     });
 
-    const animatedElements = document.querySelectorAll('.fade-in-scroll, .slide-up-scroll');
+    // Observa todos os elementos com classes de animação
+    const animatedElements = document.querySelectorAll(`
+        .fade-in-scroll, 
+        .slide-up-scroll, 
+        .slide-left-scroll, 
+        .slide-right-scroll, 
+        .scale-in-scroll
+    `);
     animatedElements.forEach(el => observer.observe(el));
 });
