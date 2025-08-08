@@ -1,0 +1,409 @@
+/* Importação de fontes e variáveis */
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --font-main: "Inter Tight", sans-serif;
+  --blur: blur(10px);
+}
+
+/* Reset para página de agradecimento */
+.thank-you-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+  position: relative;
+  flex-direction: column;
+}
+.Contact .redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+
+.Contact .redes a {
+  text-decoration: none;
+  color: #ffb437;
+  font-size: 2.5rem;
+}
+.Contact .redes a:hover {
+  color: #b4b4b4;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+.Contact form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(97, 97, 97, 0.151);
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 180, 55, 0.1);
+}
+
+
+
+
+.Contact form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(97, 97, 97);
+}
+
+.Contact form .form-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.Contact form input,
+.Contact form textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgb(97, 97, 97);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: rgb(97, 97, 97);
+}
+.Contact form textarea {
+    resize: none;
+}
+
+.Contact form input:focus,
+.Contact form textarea:focus {
+  outline: none;
+  border-color: #ffb437;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 180, 55, 0.1);
+  transform: translateY(-2px);
+}
+
+.Contact form input::placeholder,
+.Contact form textarea::placeholder {
+  color: rgb(97, 97, 97);
+  font-family: var(--font-text);
+  
+}
+
+.Contact form textarea {
+  min-height: 120px;
+  font-family: var(--font-text);
+  line-height: 1.5;
+}
+
+.Contact form button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ffb437, #f5d57e);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.Contact form button::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.Contact form button:hover::before {
+  left: 100%;
+}
+
+.Contact form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 180, 55, 0.3);
+  background: linear-gradient(135deg, #f5d57e, #ffb437);
+}
+
+.Contact form button:active {
+  transform: translateY(-1px);
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Contact form {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .Contact {
+    padding: 2rem 1rem;
+    min-height: 80vh;
+  }
+  
+  .Contact form {
+    padding: 2rem;
+  }
+  
+  .Contact form h2 {
+    font-size: 2rem;
+  }
+}
+
+
+.thank-you-page {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, #ffb437 0%, #f5d57e 50%, #ffb437 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.thank-you-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.thank-you-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 4rem 3rem;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 2;
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #28a745;
+  margin-bottom: 1.5rem;
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.thank-you-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffb437, #f5d57e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.thank-you-container p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-text);
+  line-height: 1.6;
+}
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ffb437, #f5d57e);
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffb437;
+  border: 2px solid #ffb437;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 180, 55, 0.3);
+}
+
+.btn-secondary:hover {
+  background: #ffb437;
+  color: white;
+}
+
+.decorative-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: floatCircle 6s ease-in-out infinite;
+}
+
+.circle:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+/* Responsividade para página de agradecimento */
+@media (max-width: 600px) {
+  .thank-you-container {
+    padding: 3rem 2rem;
+    margin: 1rem;
+  }
+  
+  .thank-you-container h1 {
+    font-size: 2rem;
+  }
+  
+  .thank-you-container p {
+    font-size: 1.1rem;
+  }
+  
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}

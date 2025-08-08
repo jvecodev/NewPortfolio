@@ -47,7 +47,6 @@ function getProjects() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const projetos = document.querySelectorAll('.imagensprojetos');
-
     projetos.forEach(projeto => {
         projeto.addEventListener('mouseover', () => {
             const overlay = projeto.querySelector('.overlay');
@@ -61,4 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.style.pointerEvents = 'none';
         });
     });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    const animatedElements = document.querySelectorAll('.fade-in-scroll, .slide-up-scroll');
+    animatedElements.forEach(el => observer.observe(el));
 });
