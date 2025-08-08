@@ -127,30 +127,106 @@ body::before {
   top: 10px;
   border-radius: 20px;
   transition: 0.7s;
+  overflow: visible;
 }
 
 .navbar:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease-in-out;
 }
-.navbar > .contentNav > .lenguage > button > img {
+
+/* Customização do menu hambúrguer */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 4px 6px;
+  display: none; /* Oculto por padrão */
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2871, 71, 71, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* Mostrar hamburger apenas em telas pequenas */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    display: block;
+  }
+  
+  .navbar {
+    width: 80% !important;
+  }
+  
+  .navbar-collapse {
+    background-color: #ffb637f0 !important;
+    backdrop-filter: var(--blur);
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    z-index: 1001;
+    display: none;
+  }
+  
+  .navbar-collapse.show {
+    display: block !important;
+    animation: slideDown 0.3s ease-in-out;
+  }
+  
+  .navbar-nav {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .nav-link {
+    padding: 10px 0 !important;
+    display: block;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lenguage > button > img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   filter: contrast(1.5);
 }
 
-.navbar > .contentNav > .lenguage > button {
+.lenguage > button {
   border: none;
   cursor: pointer;
   background-color: transparent;
 }
 
-.navbar > .contentNav > .lenguage > button > img:hover {
+.lenguage > button > img:hover {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
-.navbar > .contentNav {
+
+.contentNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -159,22 +235,21 @@ body::before {
   font-weight: lighter;
 }
 
-.navbar > .contentNav > .menu ul {
-  display: flex;
+.navbar-nav {
   gap: 2rem;
-  list-style: none;
-  padding-top: 1rem;
 }
 
-.navbar > .contentNav > .menu ul li a {
+.nav-link {
   text-decoration: none;
-  color: rgb(71, 71, 71);
+  color: rgb(71, 71, 71) !important;
   font-size: 1.1rem;
-  font-weight: bolder;
+  font-weight: bolder !important;
+  padding: 0.5rem 0 !important;
 }
 
-.navbar > .contentNav > .menu ul li a:hover {
-  text-decoration: underline rgb(71, 71, 71) 2px solid;
+.nav-link:hover {
+  text-decoration: underline rgb(71, 71, 71) 2px solid !important;
+  color: rgb(71, 71, 71) !important;
 }
 
 .photo > img {
@@ -665,7 +740,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .footer {
-  height: 250px;
+  height: 30vh;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;

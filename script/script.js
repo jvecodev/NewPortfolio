@@ -87,3 +87,29 @@ document.addEventListener('DOMContentLoaded', () => {
     `);
     animatedElements.forEach(el => observer.observe(el));
 });
+
+      // Teste se o Bootstrap está carregado
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Bootstrap version:', window.bootstrap?.Tooltip?.VERSION || 'Bootstrap não carregado');
+        
+        // Inicializar o collapse manualmente se necessário
+        const toggleButton = document.querySelector('.navbar-toggler');
+        const collapseElement = document.querySelector('.navbar-collapse');
+        
+        if (toggleButton && collapseElement) {
+          toggleButton.addEventListener('click', function() {
+            console.log('Botão hambúrguer clicado');
+            collapseElement.classList.toggle('show');
+          });
+        }
+      });
+
+      // Fechar menu ao clicar nos links
+      document.querySelectorAll(".nav-link").forEach((item) => {
+        item.addEventListener("click", () => {
+          const navbarCollapse = document.querySelector(".navbar-collapse");
+          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+            navbarCollapse.classList.remove('show');
+          }
+        });
+      });
