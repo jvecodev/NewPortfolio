@@ -1,0 +1,896 @@
+
+/* Tablets Medium (768px - 1024px) */
+@media (max-width: 1024px) {
+  /* Navbar */
+
+  body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background: #ffb637;
+  border-radius: 0 0 50% 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+  .navbar {
+    width: 70%;
+    padding: 10px 10px;
+  }
+  
+  .navbar > .contentNav > .menu ul {
+    gap: 1.2rem;
+  }
+  
+  .navbar > .contentNav > .menu ul li a {
+    font-size: 0.95rem;
+  }
+  
+  .photo > img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  /* Content/Home */
+  .content {
+    flex-direction: column;
+    height: auto;
+    padding: 150px 2rem 2rem;
+    text-align: center;
+  }
+  
+  .content > .sumary {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 3rem;
+  }
+  
+  .content > .sumary > .title > h1 {
+    font-size: 2.5rem;
+  }
+  
+  .content > .sumary > .title > h2 {
+    font-size: 1.6rem;
+  }
+  
+  .content > .sumary > .title > .typed-text {
+    font-size: 1.3rem;
+  }
+  
+  .content > .rightSide img {
+    width: 250px;
+    height: 320px;
+  }
+  
+  /* About */
+  .about {
+    margin: 50px auto;
+    padding: 2rem 1rem;
+  }
+  
+  .about main {
+    width: 70%;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .about .textAbout {
+    width: 100%;
+    align-items: center;
+  }
+  
+  .about h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about p {
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .about img {
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* Skills */
+  .skills-container .skills-title {
+    font-size: 2.2rem;
+    margin-top: 50px;
+  }
+  
+  .skills-container .carousel {
+    max-width: 700px;
+  }
+  
+  .skills-container .carousel-item {
+    min-width: 180px;
+  }
+  
+  /* Projects */
+  .projetos {
+    width: 85%;
+    padding: 2rem;
+  }
+  
+  .projetos > h1 {
+    font-size: 4rem;
+  }
+  
+  .projetos > .todos > .aboutPro {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .projetos h2 {
+    font-size: 1.8rem;
+  }
+  
+  .imagensprojetos {
+    width: 350px;
+    height: 180px;
+  }
+  
+  .generalinformation > .tecnologias {
+    gap: 8px;
+    display: flex;
+  }
+  
+  .tecnologias img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Tablets Small (768px) */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    width: 80%;
+    padding: 12px 12px;
+  }
+  
+  .navbar > .contentNav > .menu ul {
+    gap: 1rem;
+  }
+  
+  .navbar > .contentNav > .menu ul li a {
+    font-size: 0.9rem;
+  }
+  
+  .navbar > .contentNav > .lenguage > button > img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .photo > img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Content/Home */
+  .content {
+    padding: 120px 1.5rem 2rem;
+  }
+  
+  .content > .sumary > .title > h1 {
+    font-size: 2.2rem;
+  }
+  
+  .content > .sumary > .title > h2 {
+    font-size: 1.4rem;
+  }
+  
+  .content > .sumary > .title > .typed-text {
+    font-size: 1.1rem;
+  }
+  
+  .content > .sumary > .redes > a {
+    font-size: 2.2rem;
+  }
+  
+  .content > .rightSide img {
+    width: 220px;
+    height: 280px;
+  }
+  
+  /* About */
+  .about main {
+    width: 80%;
+  }
+  
+  .about h1 {
+    font-size: 2.2rem;
+  }
+  
+  .about p {
+    font-size: 0.95rem;
+  }
+  
+  .about img {
+    width: 280px;
+    height: 280px;
+  }
+  
+  /* Skills */
+  .skills-container .skills-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .skills-container .carousel {
+    max-width: 600px;
+  }
+  
+  .skills-container .carousel-item {
+    min-width: 160px;
+  }
+  
+  .skills-container img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  /* Projects */
+  .projetos {
+    width: 90%;
+    padding: 1.5rem;
+  }
+  
+  .projetos > h1 {
+    font-size: 3.5rem;
+  }
+  
+  .projetos > .todos > .aboutPro {
+    padding: 1.5rem;
+  }
+  
+  .imagensprojetos {
+    width: 320px;
+    height: 160px;
+  }
+  
+  .projetos > .todos p {
+    width: 100%;
+    font-size: 15px;
+  }
+  
+  .overlay {
+    width: 320px;
+    height: 160px;
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile Large (600px - 768px) */
+@media (max-width: 600px) {
+  /* Navbar */
+  .navbar {
+    width: 85%;
+    padding: 10px;
+    top: 5px;
+  }
+  
+  .navbar > .contentNav {
+    padding: 0 0.5rem;
+  }
+  
+  .navbar > .contentNav > .menu ul {
+    gap: 0.8rem;
+  }
+  
+  .navbar > .contentNav > .menu ul li a {
+    font-size: 0.8rem;
+  }
+  
+  .navbar > .contentNav > .lenguage > button > img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .photo > img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  /* Content/Home */
+  .content {
+    padding: 110px 1rem 2rem;
+    gap: 2rem;
+  }
+  
+  .content > .sumary > .title > h1 {
+    font-size: 1.8rem;
+  }
+  
+  .content > .sumary > .title > h2 {
+    font-size: 1.2rem;
+  }
+  
+  .content > .sumary > .title > .typed-text {
+    font-size: 1rem;
+  }
+  
+  .content > .sumary > .title > .work {
+    font-size: 1rem;
+  }
+  
+  .content > .sumary > .redes > a {
+    font-size: 2rem;
+    margin: 5px;
+  }
+  
+  .content > .rightSide img {
+    width: 200px;
+    height: 260px;
+  }
+  
+  /* About */
+  .about {
+    margin: 30px auto;
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .about main {
+    width: 90%;
+    gap: 1.5rem;
+  }
+  
+  .about h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .about img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .about .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Skills */
+  .skills-container {
+    height: 40vh;
+  }
+  
+  .skills-container .skills-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  
+  .skills-container .carousel {
+    max-width: 500px;
+  }
+  
+  .skills-container .carousel-item {
+    min-width: 140px;
+  }
+  
+  .skills-container img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .skills-container .carousel-item p {
+    font-size: 0.9rem;
+  }
+  
+  /* Projects */
+  .projetos {
+    width: 95%;
+    padding: 1rem;
+    gap: 2rem;
+  }
+  
+  .projetos > h1 {
+    font-size: 2.8rem;
+  }
+  
+  .projetos > .todos > .aboutPro {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .projetos h2 {
+    font-size: 1.4rem;
+  }
+  
+  .imagensprojetos {
+    width: 280px;
+    height: 140px;
+  }
+  
+  .overlay {
+    width: 280px;
+    height: 140px;
+    font-size: 1.5rem;
+  }
+  
+  .projetos > .todos p {
+    font-size: 14px;
+  }
+  
+  .generalinformation > .tecnologias {
+    gap: 6px;
+  }
+  
+  .tecnologias img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  /* Footer */
+  .footer {
+    height: 200px;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Medium (480px - 600px) */
+@media (max-width: 480px) {
+  /* Navbar */
+  .navbar {
+    width: 90%;
+    padding: 8px;
+    border-radius: 15px;
+  }
+  
+  .navbar > .contentNav > .menu ul {
+    gap: 0.6rem;
+  }
+  
+  .navbar > .contentNav > .menu ul li a {
+    font-size: 0.75rem;
+  }
+  
+  .navbar > .contentNav > .lenguage > button > img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .photo > img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Content/Home */
+  .content {
+    padding: 100px 0.8rem 1.5rem;
+  }
+  
+  .content > .sumary > .title > h1 {
+    font-size: 1.5rem;
+  }
+  
+  .content > .sumary > .title > h2 {
+    font-size: 1rem;
+  }
+  
+  .content > .sumary > .title > .typed-text {
+    font-size: 0.9rem;
+  }
+  
+  .content > .sumary > .title > .work {
+    font-size: 0.9rem;
+  }
+  
+  .content > .sumary > .redes > a {
+    font-size: 1.8rem;
+    margin: 3px;
+  }
+  
+  .content > .rightSide img {
+    width: 180px;
+    height: 240px;
+  }
+  
+  /* About */
+  .about {
+    margin: 20px auto;
+    padding: 1rem 0.3rem;
+  }
+  
+  .about main {
+    width: 95%;
+  }
+  
+  .about h1 {
+    font-size: 1.5rem;
+  }
+  
+  .about p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .about img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .about .btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+  }
+  
+  /* Skills */
+  .skills-container {
+    height: 35vh;
+  }
+  
+  .skills-container .skills-title {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  
+  .skills-container .carousel {
+    max-width: 400px;
+  }
+  
+  .skills-container .carousel-item {
+    min-width: 120px;
+  }
+  
+  .skills-container img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .skills-container .carousel-item p {
+    font-size: 0.8rem;
+  }
+  
+  /* Projects */
+  .projetos {
+    width: 98%;
+    padding: 0.8rem;
+  }
+  
+  .projetos > h1 {
+    font-size: 2.2rem;
+  }
+  
+  .projetos > .todos > .aboutPro {
+    padding: 0.8rem;
+    gap: 1rem;
+  }
+  
+  .projetos h2 {
+    font-size: 1.2rem;
+  }
+  
+  .imagensprojetos {
+    width: 240px;
+    height: 120px;
+  }
+  
+  .overlay {
+    width: 240px;
+    height: 120px;
+    font-size: 1.3rem;
+  }
+  
+  .projetos > .todos p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .generalinformation > .tecnologias {
+    gap: 4px;
+  }
+  
+  .tecnologias img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Contact */
+  .Contact {
+    padding: 0 1rem;
+  }
+  
+  .Contact .redes {
+    gap: 1.5rem;
+  }
+  
+  .Contact .redes a {
+    font-size: 2rem;
+  }
+  
+  .Contact form {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .Contact form h2 {
+    font-size: 1.2rem;
+  }
+  
+  /* Footer */
+  .footer {
+    height: 180px;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .footer p {
+    font-size: 0.8rem;
+  }
+  
+  /* Scroll to top button */
+  .scroll-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 320px) {
+  /* Navbar */
+  .navbar {
+    width: 95%;
+    padding: 6px;
+    top: 3px;
+  }
+  
+  .navbar > .contentNav > .menu ul {
+    gap: 0.4rem;
+  }
+  
+  .navbar > .contentNav > .menu ul li a {
+    font-size: 0.7rem;
+  }
+  
+  .navbar > .contentNav > .lenguage > button > img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .photo > img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* Content/Home */
+  .content {
+    padding: 90px 0.5rem 1rem;
+  }
+  
+  .content > .sumary > .title > h1 {
+    font-size: 1.3rem;
+  }
+  
+  .content > .sumary > .title > h2 {
+    font-size: 0.9rem;
+  }
+  
+  .content > .sumary > .title > .typed-text {
+    font-size: 0.8rem;
+  }
+  
+  .content > .sumary > .title > .work {
+    font-size: 0.8rem;
+  }
+  
+  .content > .sumary > .redes > a {
+    font-size: 1.5rem;
+    margin: 2px;
+  }
+  
+  .content > .rightSide img {
+    width: 160px;
+    height: 220px;
+  }
+  
+  /* About */
+  .about {
+    margin: 15px auto;
+    padding: 0.8rem 0.2rem;
+  }
+  
+  .about h1 {
+    font-size: 1.3rem;
+  }
+  
+  .about p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .about img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .about .btn-primary {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  /* Skills */
+  .skills-container {
+    height: 30vh;
+  }
+  
+  .skills-container .skills-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .skills-container .carousel {
+    max-width: 300px;
+  }
+  
+  .skills-container .carousel-item {
+    min-width: 100px;
+  }
+  
+  .skills-container img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .skills-container .carousel-item p {
+    font-size: 0.7rem;
+  }
+  
+  /* Projects */
+  .projetos {
+    padding: 0.5rem;
+  }
+  
+  .projetos > h1 {
+    font-size: 1.8rem;
+  }
+  
+  .projetos > .todos > .aboutPro {
+    padding: 0.5rem;
+    gap: 0.8rem;
+  }
+
+  .tecnologias{
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+  }
+  
+  .projetos h2 {
+    font-size: 1rem;
+  }
+  
+  .imagensprojetos {
+    width: 200px;
+    height: 100px;
+  }
+  
+  .overlay {
+    width: 200px;
+    height: 100px;
+    font-size: 1.1rem;
+  }
+  
+  .projetos > .todos p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  
+  .tecnologias img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* Contact */
+  .Contact form {
+    padding: 1rem;
+  }
+  
+  .Contact form h2 {
+    font-size: 1rem;
+  }
+  
+  .Contact form input,
+  .Contact form textarea {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .Contact form button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Footer */
+  .footer {
+    height: 150px;
+    padding: 0.8rem;
+  }
+  
+  .footer p {
+    font-size: 0.75rem;
+  }
+  
+  /* Scroll to top button */
+  .scroll-top {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Menu Mobile Hamburger (adicionar se necessário no futuro) */
+@media (max-width: 480px) {
+  .navbar {
+    position: relative;
+  }
+  
+  /* Se no futuro precisar implementar menu hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #474747;
+    margin: 2px 0;
+    transition: 0.3s;
+  }
+}
+
+/* Ajustes específicos para orientação landscape em mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .content {
+    height: auto;
+    padding: 80px 1rem 1rem;
+  }
+  
+  .content > .rightSide img {
+    width: 180px;
+    height: 240px;
+  }
+  
+  .about {
+    margin: 20px auto;
+  }
+  
+  .about main {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .about img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .skills-container {
+    height: 60vh;
+  }
+  
+  .projetos > .todos > .aboutPro {
+    flex-direction: row;
+  }
+}
