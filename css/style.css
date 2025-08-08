@@ -347,9 +347,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Botão de Currículo */
 .about .btn-primary {
-  background-color: #ffffff;
-  border-color: #ffffff;
+ background: transparent;
   color: #ffffff;
+  border: 2px solid #ffb437;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -365,7 +365,7 @@ body::-webkit-scrollbar-thumb:hover {
 .about .btn-primary:hover {
   background-color: #f8f9fa;
   border-color: #f8f9fa;
-  color: #ffffff;
+  color: #ffb437;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
