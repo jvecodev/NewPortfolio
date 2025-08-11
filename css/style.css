@@ -747,9 +747,9 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
   color: rgb(255, 255, 255);
   justify-content: center;
-  display: inline-flex;
+  flex-direction: column;
+  display: flex;
   align-items: center;
-  gap: 3rem;
   position: relative;
   z-index: 1;
 }

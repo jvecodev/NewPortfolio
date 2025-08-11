@@ -1,6 +1,128 @@
+/* Ultra Wide (mínimo 1800px) */
+@media (min-width: 1800px) {
+    body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 51vh;
+    background: #ffb637;
+    border-radius: 0 0 50% 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about main,
+  .projetos,
+  .skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .projetos > h1 {
+    font-size: 5rem;
+  }
+  .imagensprojetos {
+    width: 500px;
+    height: 260px;
+  }
+  .skills-container .carousel {
+    max-width: 1100px;
+  }
+  .footer {
+    height: 40vh;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1600px) {
+  
+  /* Navbar */
+  .navbar {
+    width: 65%;
+    padding: 12px 12px;
+  }
+  .navbar-nav {
+    gap: 1.5rem;
+  }
+  .nav-link {
+    font-size: 1.05rem !important;
+  }
+  .photo > img {
+    width: 55px;
+    height: 55px;
+  }
+  /* Content/Home */
+  .content {
+    padding: 180px 3rem 2rem;
+  }
+  .content > .sumary > .title > h1 {
+    font-size: 3rem;
+  }
+  .content > .sumary > .title > h2 {
+    font-size: 2rem;
+  }
+  .content > .sumary > .title > .typed-text {
+    font-size: 1.5rem;
+  }
+  .content > .rightSide img {
+    width: 320px;
+    height: 400px;
+  }
+  .about main {
+    width: 65%;
+  }
+  .about h1 {
+    font-size: 2.8rem;
+  }
+  .about img {
+    width: 350px;
+    height: 350px;
+  }
+  .skills-container .skills-title {
+    font-size: 2.5rem;
+  }
+  .skills-container .carousel {
+    max-width: 900px;
+  }
+  .skills-container .carousel-item {
+    min-width: 200px;
+  }
+  /* Projects */
+  .projetos {
+    width: 80%;
+    padding: 2.5rem;
+  }
+  .projetos > h1 {
+    font-size: 4.5rem;
+  }
+  .imagensprojetos {
+    width: 400px;
+    height: 220px;
+  }
+  .tecnologias img {
+    width: 48px;
+    height: 48px;
+  }
+   .footer{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
 
-/* Tablets Medium (768px - 1024px) */
-@media (max-width: 1024px) {
+/* Tablets Medium (768px - 10px) */
+@media (max-width: 1300px) {
   /* Navbar */
 
   body::before {
@@ -9,7 +131,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     background: #ffb637;
     border-radius: 0 0 50% 50%;
     pointer-events: none;
@@ -268,10 +390,9 @@
   }
 
   .footer{
-    height: 30vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     justify-content: flex-end;
   }
 }
