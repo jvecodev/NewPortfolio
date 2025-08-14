@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/intro-map.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -15,14 +16,61 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
+    <!-- Leaflet CSS e JS para o mapa -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <link rel="shortcut icon" href="./assets/icon/favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./assets/icon/favicon.ico"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./css/mediaScreenMain.css" />
 
     <title>Meu Portfólio</title>
   </head>
   <body>
+    <!-- Introdução com Mapa - Sistema Isolado -->
+    <div class="intro-container" id="introContainer">
+      <button class="skip-intro" id="skipIntro">
+        <span data-lang="pt">Pular Introdução</span>
+        <span data-lang="en" style="display: none">Skip Intro</span>
+      </button>
+
+      <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+      </div>
+
+      <div class="map-container">
+        <div id="intro-map"></div>
+        <div class="location-marker" id="locationMarker">
+          <img
+            src="./assets/img/me.jpg"
+            alt="João Vitor"
+            class="marker-photo"
+          />
+        </div>
+      </div>
+
+      <div class="intro-text" id="introText">
+        <h1 data-lang="pt">Bem-vindo ao meu portfólio!</h1>
+        <h1 data-lang="en" style="display: none">Welcome to my portfolio!</h1>
+        <p data-lang="pt">De Curitiba para o mundo</p>
+        <p data-lang="en" style="display: none">From Curitiba to the world</p>
+      </div>
+    </div>
+    <!-- Fim da Introdução -->
+
     <nav class="navbar navbar-expand-lg slide-up-scroll">
       <div class="container-fluid contentNav">
         <div class="lenguage">
@@ -34,7 +82,15 @@
           </button>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -142,7 +198,9 @@
 
     <section class="skills-container slide-up-scroll" id="tech">
       <h2 data-lang="pt" class="skills-title">Principais tecnologias...</h2>
-      <h2 class="skills-title" data-lang="en" style="display: none">Main technologies...</h2>
+      <h2 class="skills-title" data-lang="en" style="display: none">
+        Main technologies...
+      </h2>
       <div class="carousel">
         <div class="carousel-track">
           <div class="carousel-item">
@@ -207,12 +265,10 @@
             <main class="generalinformation">
               <h2>Cakeria</h2>
               <p data-lang="pt">
-                
                 Cakeria é uma plataforma online para gerenciamento de uma
                 confeitaria, faça seu pedido agora.
               </p>
               <p data-lang="en" style="display: none">
-                
                 Cakeria is an online platform for managing a bakery, make your
                 order now.
               </p>
@@ -251,20 +307,18 @@
             <main class="generalinformation">
               <h2>LifeBalance</h2>
               <p data-lang="pt">
-                 O Life Balance é um site de
-                gerenciamento de atividades físicas que ajuda a monitorar o seu
-                desempenho e progresso.  O
-                aplicativo contabiliza o número de atividades realizadas por
-                mês, permite que você registre as atividades feitas e calcula
-                seu Índice de Massa Corporal (IMC).
+                O Life Balance é um site de gerenciamento de atividades físicas
+                que ajuda a monitorar o seu desempenho e progresso. O aplicativo
+                contabiliza o número de atividades realizadas por mês, permite
+                que você registre as atividades feitas e calcula seu Índice de
+                Massa Corporal (IMC).
               </p>
               <p data-lang="en" style="display: none">
-                Life Balance is a physical
-                activity management website that helps you monitor your
-                performance and progress.
-                The application counts the
-                number of activities performed per month, allows you to record
-                the activities done and calculates your Body Mass Index (BMI).
+                Life Balance is a physical activity management website that
+                helps you monitor your performance and progress. The application
+                counts the number of activities performed per month, allows you
+                to record the activities done and calculates your Body Mass
+                Index (BMI).
               </p>
               <main class="tecnologias">
                 <img src="assets/icon/html.png" alt="" />
@@ -294,14 +348,13 @@
               <h2>Pipocando</h2>
 
               <p data-lang="pt">
-                 Pipocando, um fórum de filmes onde os
-                usuários podem discutir sobre os lançamentos, comentar suas
-                opiniões, e compartilhar recomendações.
+                Pipocando, um fórum de filmes onde os usuários podem discutir
+                sobre os lançamentos, comentar suas opiniões, e compartilhar
+                recomendações.
               </p>
               <p data-lang="en" style="display: none">
-                Pipocando, a movie forum where users
-                can discuss new releases, share their opinions, and share
-                recommendations.
+                Pipocando, a movie forum where users can discuss new releases,
+                share their opinions, and share recommendations.
               </p>
               <main class="tecnologias">
                 <img src="assets/icon/spring.png" alt="" />
@@ -344,20 +397,17 @@
             <main class="generalinformation">
               <h2>EconomizeJa</h2>
               <p data-lang="pt">
-                 EconomizeJa é uma aplicação web
-                sendo desenvolvida com o objetivo de reduzir o desperdício de
-                alimentos. Nosso projeto conecta consumidores a supermercados,
-                restaurantes e outros estabelecimentos que desejam vender
-                produtos próximos do vencimento, com pequenos defeitos
-               
+                EconomizeJa é uma aplicação web sendo desenvolvida com o
+                objetivo de reduzir o desperdício de alimentos. Nosso projeto
+                conecta consumidores a supermercados, restaurantes e outros
+                estabelecimentos que desejam vender produtos próximos do
+                vencimento, com pequenos defeitos
               </p>
               <p data-lang="en" style="display: none">
-                 EconomizeJa is a web application
-                developed with the aim of reducing food waste. Our project
-                connects consumers to supermarkets, restaurants and other
-                establishments that want to sell products close to their
-                expiration date, with small defects
-                
+                EconomizeJa is a web application developed with the aim of
+                reducing food waste. Our project connects consumers to
+                supermarkets, restaurants and other establishments that want to
+                sell products close to their expiration date, with small defects
               </p>
               <main class="tecnologias">
                 <img src="assets/icon/html.png" alt="" />
@@ -385,9 +435,7 @@
 
     <div class="Contact slide-left-scroll" id="contato">
       <main class="redes">
-        <a href="#contato"
-          ><i class="bi bi-envelope-fill"></i
-        ></a>
+        <a href="#contato"><i class="bi bi-envelope-fill"></i></a>
         <a href="https://www.linkedin.com/in/jwoliveira/" target="_blank"
           ><i class="bi bi-linkedin"></i
         ></a>
@@ -396,17 +444,20 @@
         ></a>
       </main>
       <form
-      action="https://formsubmit.co/jvitor.oliveira1803@gmail.com"
-      method="POST"
+        action="https://formsubmit.co/jvitor.oliveira1803@gmail.com"
+        method="POST"
       >
-      <h2 data-lang="pt">Entre em Contato</h2>
-      <h2 data-lang="en" style="display: none">Get in Touch</h2>
-      
-      <div class="form-group">
-        <input type="text" name="name" required placeholder="Nome" />
+        <h2 data-lang="pt">Entre em Contato</h2>
+        <h2 data-lang="en" style="display: none">Get in Touch</h2>
 
-        <input type="hidden" name="_next" value="https://jvecodev.github.io/NewPortfolio/email.html" />
-          
+        <div class="form-group">
+          <input type="text" name="name" required placeholder="Nome" />
+
+          <input
+            type="hidden"
+            name="_next"
+            value="https://jvecodev.github.io/NewPortfolio/email.html"
+          />
         </div>
 
         <div class="form-group">
@@ -433,23 +484,29 @@
       </form>
     </div>
     <footer class="footer">
-      <img src="assets/img/logoName.svg" alt="logo" style="width: 100px; height: 100px" />
+      <img
+        src="assets/img/logoName.svg"
+        alt="logo"
+        style="width: 100px; height: 100px"
+      />
       <p>&copy; 2025 Personal Portfolio.</p>
       <p data-lang="pt">Desenvolvido por João Vitor Oliveira</p>
-      <p data-lang="en" style="display: none">Developed by João Vitor Oliveira</p>
+      <p data-lang="en" style="display: none">
+        Developed by João Vitor Oliveira
+      </p>
     </footer>
 
     <button class="scroll-top" id="scrollTop">
       <i class="bi bi-arrow-up"></i>
     </button>
 
-    <script 
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
-      crossorigin="anonymous">
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script/intro-map-isolated.js"></script>
     <script src="./script/scriptTranslate.js"></script>
-    <script src="./script/script.js"></script>
-
+    <script src="./script/portfolio-init.js"></script>
   </body>
 </html>
