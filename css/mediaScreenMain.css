@@ -342,8 +342,10 @@
     width: 280px;
     height: 280px;
   }
-  .geographic-coordinates {
+  
+   .geographic-coordinates {
     gap: 1rem;
+    flex-direction: column;
   }
   
   .coords {
@@ -684,6 +686,11 @@
     font-size: 0.8rem;
     border-radius: 20px;
   }
+
+  .geographic-coordinates {
+    gap: 1rem;
+    flex-direction: column;
+  }
    .coords {
     padding: 0.5rem 0.8rem;
     max-width: 180px;
@@ -900,6 +907,11 @@
     padding: 0.4rem 0.8rem;
     font-size: 0.75rem;
     margin-top: 1rem;
+  }
+
+   .geographic-coordinates {
+    gap: 1rem;
+    flex-direction: column;
   }
 
   .coords {

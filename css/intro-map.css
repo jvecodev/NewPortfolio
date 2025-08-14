@@ -112,7 +112,7 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: white;
+  color: rgb(97,97,97);
   z-index: 1001;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;

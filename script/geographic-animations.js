@@ -40,7 +40,6 @@ class GeographicAnimations {
     let boatX = 0;
     let boatY = 0;
 
-    // Seguir o mouse
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
