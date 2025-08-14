@@ -137,26 +137,41 @@ body::before {
 
 /* Customização do menu hambúrguer */
 .navbar-toggler {
-  border: none;
-  background: transparent;
-  padding: 4px 6px;
-  display: none; /* Oculto por padrão */
+  border: none !important;
+  background: transparent !important;
+  padding: 4px 6px !important;
+  display: none !important; /* Oculto por padrão */
+  outline: none !important;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 1002;
 }
 
 .navbar-toggler:focus {
-  box-shadow: none;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.navbar-toggler:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px;
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2871, 71, 71, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  width: 1.5em;
-  height: 1.5em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2871, 71, 71, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  width: 1.5em !important;
+  height: 1.5em !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% !important;
 }
 
 /* Mostrar hamburger apenas em telas pequenas */
 @media (max-width: 991px) {
   .navbar-toggler {
-    display: block;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .navbar {
@@ -170,30 +185,39 @@ body::before {
     margin-top: 10px;
     padding: 15px;
     width: 100%;
-    position: relative;
-    z-index: 1001;
-    display: none;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 1001 !important;
+    display: none !important;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out !important;
   }
   
   .navbar-collapse.show {
     display: block !important;
-    animation: slideDown 0.3s ease-in-out;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: slideDown 0.3s ease-in-out !important;
   }
   
   .navbar-nav {
-    width: 100%;
-    flex-direction: column;
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 0 !important;
   }
   
   .nav-item {
-    width: 100%;
-    text-align: center;
-    margin: 5px 0;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 5px 0 !important;
   }
   
   .nav-link {
     padding: 10px 0 !important;
-    display: block;
+    display: block !important;
+    width: 100% !important;
   }
 }
 

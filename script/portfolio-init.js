@@ -38,7 +38,6 @@ class PortfolioInit {
   initializePortfolio() {
     if (this.animationsInitialized) return;
     
-    console.log('🚀 Inicializando portfólio...');
     
     // Garantir que o body está limpo
     document.body.style.position = '';
@@ -48,7 +47,12 @@ class PortfolioInit {
     this.initScrollAnimations();
     this.initScrollTopButton();
     this.initProjectHovers();
-    this.initNavbarCollapse();
+    
+    // Delay para inicializar o navbar (garantir que Bootstrap carregou)
+    setTimeout(() => {
+      this.initNavbarCollapse();
+    }, 200);
+    
     this.initTypedJS();
     
     this.animationsInitialized = true;
@@ -125,24 +129,79 @@ class PortfolioInit {
   }
 
   initNavbarCollapse() {
+    
     const toggleButton = document.querySelector(".navbar-toggler");
     const collapseElement = document.querySelector(".navbar-collapse");
 
-    if (toggleButton && collapseElement) {
-      toggleButton.addEventListener("click", function () {
-        collapseElement.classList.toggle("show");
+    if (!toggleButton || !collapseElement) {
+      console.warn('⚠️ Elementos do navbar não encontrados:', {
+        toggleButton: !!toggleButton,
+        collapseElement: !!collapseElement
+      });
+      return;
+    }
+
+
+    toggleButton.replaceWith(toggleButton.cloneNode(true));
+    const newToggleButton = document.querySelector(".navbar-toggler");
+
+    try {
+      if (window.bootstrap && window.bootstrap.Collapse) {
+        const bsCollapse = new window.bootstrap.Collapse(collapseElement, {
+          toggle: false
+        });
+        
+        newToggleButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          bsCollapse.toggle();
+        });
+      } else {
+        throw new Error('Bootstrap não carregado');
+      }
+    } catch (error) {
+      console.warn('⚠️ Bootstrap Collapse falhou, usando método customizado:', error);
+      
+      newToggleButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isVisible = collapseElement.classList.contains("show");
+        
+        if (isVisible) {
+          collapseElement.classList.remove("show");
+          newToggleButton.setAttribute('aria-expanded', 'false');
+        } else {
+          collapseElement.classList.add("show");
+          newToggleButton.setAttribute('aria-expanded', 'true');
+        }
       });
     }
 
-    // Fechar menu ao clicar nos links
     document.querySelectorAll(".nav-link").forEach((item) => {
       item.addEventListener("click", () => {
         const navbarCollapse = document.querySelector(".navbar-collapse");
+        const toggleBtn = document.querySelector(".navbar-toggler");
+        
         if (navbarCollapse && navbarCollapse.classList.contains("show")) {
           navbarCollapse.classList.remove("show");
+          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
         }
       });
     });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar')) {
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const toggleBtn = document.querySelector(".navbar-toggler");
+        
+        if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+          navbarCollapse.classList.remove("show");
+          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+
   }
 
   initTypedJS() {
@@ -162,17 +221,14 @@ class PortfolioInit {
     }, 500);
   }
 
-  // Método público para reinicializar (útil para debug)
   reinitialize() {
     this.animationsInitialized = false;
     this.initializePortfolio();
   }
 }
 
-// Inicializar quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", () => {
   window.portfolioInit = new PortfolioInit();
 });
 
-// Exportar para uso global (debug)
 window.PortfolioInit = PortfolioInit;

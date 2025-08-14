@@ -17,9 +17,7 @@ class IsolatedIntroMap {
   }
 
   init() {
-    console.log('🗺️ Iniciando intro do mapa...');
     
-    // Aguardar DOM e Leaflet estarem prontos
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => this.start());
     } else {
@@ -28,9 +26,7 @@ class IsolatedIntroMap {
   }
 
   start() {
-    // Verificar se Leaflet está carregado
     if (typeof L === 'undefined') {
-      console.log('⏳ Aguardando Leaflet carregar...');
       setTimeout(() => this.start(), 100);
       return;
     }
@@ -65,13 +61,11 @@ class IsolatedIntroMap {
       });
 
     } catch (error) {
-      console.error('Erro ao inicializar mapa:', error);
       this.skipToPortfolio();
     }
   }
 
   startAnimation() {
-    console.log('🎬 Iniciando animação do mapa...');
     
     // Sequência de zoom até Curitiba
     const zoomSequence = [
@@ -121,12 +115,10 @@ class IsolatedIntroMap {
   }
 
   finishIntro() {
-    console.log('🏁 Finalizando intro...');
     this.removeIntroCompletely();
   }
 
   skipToPortfolio() {
-    console.log('⏭️ Pulando para o portfólio...');
     this.removeIntroCompletely();
   }
 
@@ -153,7 +145,6 @@ class IsolatedIntroMap {
         // Remover elemento do DOM
         if (introContainer && introContainer.parentNode) {
           introContainer.parentNode.removeChild(introContainer);
-          console.log('🗑️ Intro removida do DOM');
         }
         
         // Limpar estilos vazados
@@ -167,7 +158,6 @@ class IsolatedIntroMap {
         this.ensurePortfolioInit();
         
       } catch (error) {
-        console.error('Erro ao remover intro:', error);
         this.ensurePortfolioInit();
       }
     }, 800);
@@ -176,7 +166,6 @@ class IsolatedIntroMap {
   ensurePortfolioInit() {
     // Garantir que o portfolio seja inicializado
     if (!this.portfolioInitialized && window.portfolioInit) {
-      console.log('🚀 Garantindo inicialização do portfólio...');
       
       // Pequeno delay para garantir que a remoção da intro foi concluída
       setTimeout(() => {
@@ -192,7 +181,6 @@ class IsolatedIntroMap {
     const skipBtn = document.getElementById('skipIntro');
     if (skipBtn) {
       skipBtn.addEventListener('click', () => {
-        console.log('👆 Usuário pulou a intro');
         this.skipToPortfolio();
       });
     }
@@ -200,7 +188,6 @@ class IsolatedIntroMap {
     // ESC para pular
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !this.isAnimationComplete) {
-        console.log('⌨️ Intro pulada via ESC');
         this.skipToPortfolio();
       }
     });
@@ -208,7 +195,6 @@ class IsolatedIntroMap {
     // Timeout de segurança (caso algo dê errado)
     setTimeout(() => {
       if (!this.isAnimationComplete) {
-        console.log('⏰ Timeout de segurança - removendo intro');
         this.skipToPortfolio();
       }
     }, 15000); // 15 segundos máximo
@@ -217,6 +203,5 @@ class IsolatedIntroMap {
 
 // Inicializar apenas se a intro existir
 if (document.getElementById('introContainer')) {
-  console.log('🎯 Intro detectada - inicializando sistema isolado');
   window.isolatedIntro = new IsolatedIntroMap();
 } 
