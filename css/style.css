@@ -231,20 +231,20 @@ body::before {
   }
 }
 
-.lenguage > button > img {
+.language > button > img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   filter: contrast(1.5);
 }
 
-.lenguage > button {
+.language > button {
   border: none;
   cursor: pointer;
   background-color: transparent;
 }
 
-.lenguage > button > img:hover {
+.language > button > img:hover {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
@@ -545,9 +545,8 @@ body::-webkit-scrollbar-thumb:hover {
   margin: 0px;
 }
 
-.skills-container img {
-  width: 50px;
-  height: 50px;
+.skills-container i {
+  font-size: 50px;
   border-radius: 50%;
 }
 
@@ -704,8 +703,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .generalinformation > .tecnologias {
-  width: 48px;
-  height: 48px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -713,14 +711,12 @@ body::-webkit-scrollbar-thumb:hover {
   gap: 10px;
 }
 
-.tecnologias img {
-  width: 48px;
-  height: 48px;
+.tecnologias i {
+  font-size: 30px;
 }
 
-.generalinformation img {
-  width: 38px;
-  height: 38px;
+.generalinformation i {
+  font-size: 38px;
   transition: 0.7s;
 }
 
@@ -731,7 +727,7 @@ body::-webkit-scrollbar-thumb:hover {
   margin: 10px 0;
 }
 
-.tecnologias img:hover {
+.tecnologias i:hover {
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }

@@ -114,9 +114,8 @@
     width: 400px;
     height: 220px;
   }
-  .tecnologias img {
-    width: 48px;
-    height: 48px;
+  .tecnologias i {
+    font-size: 50px;
   }
    .footer{
     height: 30vh;
@@ -268,9 +267,8 @@
     display: flex;
   }
   
-  .tecnologias img {
-    width: 42px;
-    height: 42px;
+  .tecnologias i {
+    font-size: 30px;
   }
   
 }
@@ -567,10 +565,9 @@
   .generalinformation > .tecnologias {
     gap: 6px;
   }
-  
-  .tecnologias img {
-    width: 36px;
-    height: 36px;
+
+  .tecnologias i {
+    font-size: 36px;
   }
   
 }
@@ -734,10 +731,9 @@
   .generalinformation > .tecnologias {
     gap: 4px;
   }
-  
-  .tecnologias img {
-    width: 32px;
-    height: 32px;
+
+  .tecnologias i {
+    font-size: 32px;
   }
   
   /* Contact */
@@ -933,10 +929,9 @@
     font-size: 12px;
     line-height: 1.3;
   }
-  
-  .tecnologias img {
-    width: 28px;
-    height: 28px;
+
+  .tecnologias i {
+    font-size: 28px;
   }
   
   /* Contact */
