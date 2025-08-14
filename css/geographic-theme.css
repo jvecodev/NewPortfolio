@@ -1,0 +1,242 @@
+/* ========================================
+   ELEMENTOS GEOGRÁFICOS ELEGANTES
+======================================== */
+
+/* Barquinho que Segue o Cursor */
+.sailing-boat {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+  pointer-events: none;
+  transition: all 0.1s ease-out;
+  transform-origin: center;
+}
+
+.boat-icon {
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23654321' d='M20 40 L44 40 L42 50 L22 50 Z'/%3E%3Cpath fill='%23ffffff' d='M32 10 L32 40 L38 25 L32 10'/%3E%3Cpath fill='%23ff6b6b' d='M32 10 L32 40 L26 25 L32 10'/%3E%3Ccircle fill='%23654321' cx='32' cy='40' r='2'/%3E%3C/svg%3E") center/contain no-repeat;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+  animation: boatFloat 3s ease-in-out infinite;
+}
+
+@keyframes boatFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+/* Rosa dos Ventos Melhorada */
+.compass-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  z-index: 100;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.compass-container:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.compass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a237e 0%, #283593 100%);
+  border: 3px solid #ffb637;
+  box-shadow: 0 0 25px rgba(255, 182, 55, 0.4),
+              inset 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: compassGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes compassGlow {
+  0% { box-shadow: 0 0 25px rgba(255, 182, 55, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1); }
+  100% { box-shadow: 0 0 35px rgba(255, 182, 55, 0.7), inset 0 0 30px rgba(255, 255, 255, 0.2); }
+}
+
+.compass-needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(to bottom, #e74c3c 0%, #e74c3c 50%, #ecf0f1 50%, #ecf0f1 100%);
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(0deg);
+  border-radius: 2px;
+  animation: compassRotate 25s linear infinite;
+}
+
+@keyframes compassRotate {
+  0% { transform: translate(-50%, -100%) rotate(0deg); }
+  100% { transform: translate(-50%, -100%) rotate(360deg); }
+}
+
+.compass-directions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffb637;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 0 0 10px rgba(255, 182, 55, 0.8);
+}
+
+.compass-n { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); }
+.compass-s { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); }
+.compass-e { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); }
+.compass-w { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); }
+
+/* Background Oceânico Animado */
+.ocean-background {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  transform: translateY(-50%);
+  z-index: 90;
+  opacity: 0.7;
+}
+
+.solar-system:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.lighthouse-light {
+  width: 35px;
+  height: 20px;
+  background: #f1c40f;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 30px #f1c40f;
+  animation: lighthouseBeam 4s ease-in-out infinite;
+}
+
+@keyframes lighthouseBeam {
+  0%, 100% { box-shadow: 0 0 30px #f1c40f; }
+  50% { box-shadow: 0 0 50px #f1c40f, 0 0 80px rgba(241, 196, 15, 0.5); }
+}
+
+
+
+
+@keyframes topographicMove {
+  0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+  100% { background-position: 100% 100%, -100% -100%, 50px 50px; }
+}
+
+.geographic-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.08;
+  background-image: 
+    linear-gradient(rgb(26, 34, 126) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(12, 26, 182) 1px, transparent 1px),
+    linear-gradient(rgb(255, 182, 55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 182, 55, 0.445) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  animation: gridMove 25s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(100px, 100px); }
+}
+
+
+
+/* Constelações de Fundo */
+.constellation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: starTwinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes starTwinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Rosa dos Ventos no Background da Seção Sobre */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='rgba(255,255,255,0.1)'%3E%3Cpolygon points='100,10 110,90 100,100 90,90'/%3E%3Cpolygon points='190,100 110,110 100,100 110,90'/%3E%3Cpolygon points='100,190 90,110 100,100 110,110'/%3E%3Cpolygon points='10,100 90,90 100,100 90,110'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+  animation: windRoseRotate 60s linear infinite;
+}
+
+@keyframes windRoseRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+
+@keyframes coordsGlow {
+  0% { border-color: #ffb637; box-shadow: 0 4px 15px rgba(255, 182, 55, 0.3); }
+  100% { border-color: #f39c12; box-shadow: 0 4px 20px rgba(243, 156, 18, 0.5); }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .compass-container,
+  .geographic-quotes,
+  .lighthouse,
+  .geographic-coords {
+    display: none;
+  }
+  
+  .footer-compass {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .about::before {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .sailing-boat {
+    width: 25px;
+    height: 25px;
+  }
+}

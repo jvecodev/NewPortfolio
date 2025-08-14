@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/contact.css" />
     <link rel="stylesheet" href="./css/intro-map.css" />
+    <link rel="stylesheet" href="./css/geographic-theme.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -40,6 +41,28 @@
     <title>Meu Portfólio</title>
   </head>
   <body>
+    <!-- Background Geográfico -->
+    <div class="geographic-background"></div>
+    
+    <!-- Barquinho que Segue o Cursor -->
+    <div class="sailing-boat" id="sailingBoat">
+      <div class="boat-icon"></div>
+    </div>
+
+    <!-- Rosa dos Ventos/Bússola -->
+    <div class="compass-container">
+      <div class="compass">
+        <div class="compass-needle"></div>
+        <div class="compass-directions">
+          <div class="compass-n">N</div>
+          <div class="compass-e">E</div>
+          <div class="compass-s">S</div>
+          <div class="compass-w">W</div>
+        </div>
+      </div>
+    </div>
+  
+    
     <!-- Introdução com Mapa - Sistema Isolado -->
     <div class="intro-container" id="introContainer">
       <button class="skip-intro" id="skipIntro">
@@ -484,6 +507,7 @@
       </form>
     </div>
     <footer class="footer">
+      
       <img
         src="assets/img/logoName.svg"
         alt="logo"
@@ -508,6 +532,7 @@
     <script src="./script/intro-map-isolated.js"></script>
     <script src="./script/scriptTranslate.js"></script>
     <script src="./script/portfolio-init.js"></script>
+    <script src="./script/geographic-animations.js"></script>
     
     
   </body>
