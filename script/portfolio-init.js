@@ -38,17 +38,14 @@ class PortfolioInit {
   initializePortfolio() {
     if (this.animationsInitialized) return;
     
-    
     // Garantir que o body está limpo
     document.body.style.position = '';
     document.body.style.overflow = '';
     
-    // Inicializar todas as funcionalidades
     this.initScrollAnimations();
     this.initScrollTopButton();
     this.initProjectHovers();
     
-    // Delay para inicializar o navbar (garantir que Bootstrap carregou)
     setTimeout(() => {
       this.initNavbarCollapse();
     }, 200);
@@ -59,7 +56,7 @@ class PortfolioInit {
   }
 
   initScrollAnimations() {
-    // Sistema de animação bidirecional (scroll up e down)
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
