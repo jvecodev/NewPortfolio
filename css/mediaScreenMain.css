@@ -115,7 +115,7 @@
     height: 220px;
   }
   .tecnologias i {
-    font-size: 40px;
+    font-size: 30px;
   }
    .footer{
     height: 30vh;
@@ -249,11 +249,7 @@
   .projetos h2 {
     font-size: 1.8rem;
   }
-  
-  .imagensprojetos {
-    width: 350px;
-    height: 180px;
-  }
+
   
   .generalinformation > .tecnologias {
     gap: 8px;
@@ -595,7 +591,7 @@
   }
 
   .tecnologias i {
-    font-size: 28px;
+    font-size: 20px;
   }
   
 }
@@ -786,7 +782,7 @@
   }
 
   .tecnologias i {
-    font-size: 26px;
+    font-size: 20px;
   }
   
   /* Contact */

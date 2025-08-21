@@ -237,7 +237,6 @@ function openWhatsApp() {
   window.open(whatsappURL, "_blank");
 }
 
-openWhatsApp();
 
 document.addEventListener("DOMContentLoaded", () => {
   window.portfolioInit = new PortfolioInit();

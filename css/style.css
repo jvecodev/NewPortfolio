@@ -809,12 +809,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .tecnologias i {
-  font-size: 25px;
+  font-size: 15px;
   color: rgb(97, 97, 97)
 }
 
 .generalinformation i {
-  font-size: 25px;
+  font-size: 15px;
   transition: 0.7s;
   color: rgb(97, 97, 97)
 }
