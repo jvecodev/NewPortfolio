@@ -862,12 +862,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 .footer {
   height: 30vh;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%23979797' fill-opacity='1' d='M0,160 C360,240 540,64 900,144 C1200,210 1320,160 1440,128 L1440,320 L0,320 Z'/></svg>");
+  
   width: 100%;
-  color: rgb(255, 255, 255);
+  color: rgb(97, 97, 97);
   justify-content: center;
   flex-direction: column;
   display: flex;
