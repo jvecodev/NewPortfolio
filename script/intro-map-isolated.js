@@ -10,7 +10,7 @@ class IsolatedIntroMap {
     this.isAnimationComplete = false;
     this.portfolioInitialized = false;
     
-    // Verificar se a intro existe antes de inicializar
+    //intro existente
     if (document.getElementById('introContainer')) {
       this.init();
     }
@@ -37,7 +37,7 @@ class IsolatedIntroMap {
 
   initMap() {
     try {
-      // Inicializar mapa com vista global
+      //Inicializar
       this.map = L.map('intro-map', {
         center: [20, 0], 
         zoom: 2,
@@ -67,7 +67,7 @@ class IsolatedIntroMap {
 
   startAnimation() {
     
-    // Sequência de zoom até Curitiba
+   
     const zoomSequence = [
       { center: [20, 0], zoom: 2, duration: 1000 },      // Vista global
       { center: [-15, -55], zoom: 4, duration: 1500 },   // América do Sul
@@ -130,28 +130,22 @@ class IsolatedIntroMap {
       return;
     }
     
-    // Fade out
     introContainer.classList.add('hidden');
     
-    // Remover completamente após transição
     setTimeout(() => {
       try {
-        // Destruir mapa se existir
         if (this.map) {
           this.map.remove();
           this.map = null;
         }
         
-        // Remover elemento do DOM
         if (introContainer && introContainer.parentNode) {
           introContainer.parentNode.removeChild(introContainer);
         }
         
-        // Limpar estilos vazados
         document.body.style.position = '';
         document.body.style.overflow = '';
         
-        // Forçar reflow
         document.body.offsetHeight;
         
         this.isAnimationComplete = true;
@@ -164,10 +158,9 @@ class IsolatedIntroMap {
   }
 
   ensurePortfolioInit() {
-    // Garantir que o portfolio seja inicializado
     if (!this.portfolioInitialized && window.portfolioInit) {
       
-      // Pequeno delay para garantir que a remoção da intro foi concluída
+      //Delay para remoção
       setTimeout(() => {
         if (window.portfolioInit && typeof window.portfolioInit.reinitialize === 'function') {
           window.portfolioInit.reinitialize();
@@ -185,23 +178,20 @@ class IsolatedIntroMap {
       });
     }
 
-    // ESC para pular
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !this.isAnimationComplete) {
         this.skipToPortfolio();
       }
     });
 
-    // Timeout de segurança (caso algo dê errado)
     setTimeout(() => {
       if (!this.isAnimationComplete) {
         this.skipToPortfolio();
       }
-    }, 15000); // 15 segundos máximo
+    }, 15000);
   }
 }
 
-// Inicializar apenas se a intro existir
 if (document.getElementById('introContainer')) {
   window.isolatedIntro = new IsolatedIntroMap();
 } 

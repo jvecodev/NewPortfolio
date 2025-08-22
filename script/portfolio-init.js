@@ -20,7 +20,7 @@ class PortfolioInit {
     if (this.isIntroActive) {
       this.waitForIntroCompletion();
     } else {
-      // Se não há intro ou está desabilitada, inicializar diretamente
+      //inicializar diretamente
       this.initializePortfolio();
     }
   }
@@ -41,7 +41,7 @@ class PortfolioInit {
   initializePortfolio() {
     if (this.animationsInitialized) return;
 
-    // Garantir que o body está limpo
+    //Garantir que o body está limpo
     document.body.style.position = "";
     document.body.style.overflow = "";
 
