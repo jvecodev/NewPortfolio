@@ -227,11 +227,21 @@
           href="assets/documents/curriculo.pdf"
           download
           class="btn btn-primary"
+          data-lang="pt"
         >
           <i class="bi bi-download"></i> Baixe meu currículo
         </a>
+        <a
+          href="assets/documents/curriculo.pdf"
+          download
+          class="btn btn-primary"
+          data-lang="pt"
+        >
+          <i class="bi bi-download" data-lang="en" style="display: none" ></i> Download my resume
+        </a>
         <div class="coords">
           <span class="coord-label">LOCALIZAÇÃO</span>
+          <span class="coord-label" data-lang="en" style="display: none">LOCATION</span>
           <span class="coord-value" id="">25°25'40.8"S</span>
           <span class="coord-value" id="coordLng">49°16'14.4"W</span>
         </div>
@@ -484,7 +494,7 @@
         <h2 data-lang="en" style="display: none">Get in Touch</h2>
 
         <div class="form-group">
-          <input type="text" name="name" required placeholder="Nome" />
+          <input type="text" name="name" required placeholder="Name" />
 
           <input
             type="hidden"
@@ -494,7 +504,7 @@
         </div>
 
         <div class="form-group">
-          <input type="email" name="email" required placeholder=" Seu email" />
+          <input type="email" name="email" required placeholder="  email" />
         </div>
 
         <div>
@@ -505,7 +515,7 @@
           <textarea
             name="message"
             id=""
-            placeholder="Mensagem"
+            placeholder="message"
             required
           ></textarea>
         </div>
