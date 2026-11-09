@@ -1,0 +1,73 @@
+<div class="bar">
+  <div class="lang" role="group" [attr.aria-label]="c().a11y.language">
+    @for (l of langs; track l.code) {
+      <button
+        type="button"
+        [class.on]="i18n.lang() === l.code"
+        [attr.aria-pressed]="i18n.lang() === l.code"
+        [attr.aria-label]="l.label"
+        (click)="i18n.set(l.code)"
+      >
+        <img [src]="l.flag" alt="" width="32" height="32" />
+      </button>
+    }
+  </div>
+
+  <nav class="nav" id="site-nav" [attr.aria-label]="c().a11y.menu">
+    <ul>
+      @for (item of c().nav; track item.id) {
+        <li>
+          <a
+            [href]="'#' + item.id"
+            [class.active]="active() === item.id"
+            [attr.aria-current]="active() === item.id ? 'location' : null"
+            (click)="menuOpen.set(false)"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="tools">
+    <button
+      type="button"
+      class="icon-btn"
+      (click)="theme.toggle()"
+      [attr.aria-label]="theme.theme() === 'dark' ? c().a11y.themeToLight : c().a11y.themeToDark"
+    >
+      @if (theme.theme() === 'dark') {
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" />
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" />
+        </svg>
+      } @else {
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" />
+        </svg>
+      }
+    </button>
+
+    <button
+      type="button"
+      class="icon-btn menu-btn"
+      aria-controls="site-nav"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="menuOpen() ? c().a11y.close : c().a11y.menu"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        @if (menuOpen()) {
+          <path d="M6 6l12 12M18 6L6 18" />
+        } @else {
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        }
+      </svg>
+    </button>
+
+    <a class="photo" href="#top" (click)="menuOpen.set(false)">
+      <img [src]="photo" [alt]="name" width="44" height="44" />
+    </a>
+  </div>
+</div>

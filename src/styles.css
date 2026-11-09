@@ -1,0 +1,297 @@
+/* ==========================================================================
+   Tokens — identity: amber #ffb637, Inter Tight + Caveat (handwritten accents).
+   ========================================================================== */
+:root {
+  --amber: #ffb637;
+  --amber-deep: #f39c12;
+  --amber-soft: #f5d57e;
+  --amber-ink: #a35f00; /* amber for small text on white (AA contrast) */
+
+  --paper: #ffffff;
+  --paper-2: #fff8ec;
+  --card: #ffffff;
+  --ink: #2d2d2d;
+  --ink-2: rgb(97, 97, 97);
+  --ink-3: #9a9a9a;
+  --line: rgba(97, 97, 97, 0.14);
+  --line-strong: rgba(97, 97, 97, 0.28);
+  --accent: var(--amber);
+  --on-amber: #ffffff;
+
+  --shadow: 0 6px 20px rgba(97, 97, 97, 0.08);
+  --shadow-lg: 0 12px 36px rgba(97, 97, 97, 0.1);
+  --radius: 20px;
+  --radius-sm: 12px;
+
+  --globe-sea: #ffffff;
+  --globe-land: #ffe2a8;
+  --globe-coast: #e29a1c;
+  --globe-grid: rgba(243, 156, 18, 0.18);
+  --globe-rim: rgba(97, 97, 97, 0.35);
+
+  --font-display: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: var(--font-display);
+  --font-hand: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+
+  --max: 1200px;
+  --gutter: 32px;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #15161a;
+  --paper-2: #1c1d22;
+  --card: #1f2026;
+  --ink: #f2f0ec;
+  --ink-2: #c4c2bd;
+  --ink-3: #8d8b87;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --amber-ink: var(--amber);
+  --on-amber: #1b1306;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  --globe-sea: #1f2026;
+  --globe-land: #6b4b14;
+  --globe-coast: #ffb637;
+  --globe-grid: rgba(255, 182, 55, 0.14);
+  --globe-rim: rgba(255, 182, 55, 0.5);
+
+  color-scheme: dark;
+}
+
+@media (max-width: 759px) {
+  :root {
+    --gutter: 16px;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--amber);
+  color: #1b1306;
+}
+
+/* Custom scrollbar (from the original site) */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: var(--amber);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amber-soft);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--amber-deep);
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+  color: var(--paper);
+}
+
+/* ==========================================================================
+   Section layout: centered header, content below.
+   ========================================================================== */
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 104px var(--gutter);
+}
+
+.section > app-section-header {
+  margin-bottom: 48px;
+}
+
+@media (max-width: 759px) {
+  .section {
+    padding-block: 72px;
+  }
+
+  .section > app-section-header {
+    margin-bottom: 40px;
+  }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  font: 600 0.9375rem/1 var(--font-display);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: var(--amber);
+  color: #1b1306;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn.primary:hover {
+  background: linear-gradient(135deg, var(--amber-soft), var(--amber));
+  color: #1b1306;
+  box-shadow: 0 10px 25px rgba(255, 180, 55, 0.35);
+}
+
+.btn.light {
+  background: #ffffff;
+  color: #2d2d2d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn.light:hover {
+  color: var(--amber-deep);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn.ghost {
+  border-color: currentColor;
+  background: transparent;
+  color: #ffffff;
+}
+
+.btn.ghost:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--amber-deep);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+  transform: none;
+}
+
+/* ==========================================================================
+   Reveal on scroll
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

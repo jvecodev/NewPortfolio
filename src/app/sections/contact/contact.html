@@ -1,0 +1,64 @@
+<section class="section" aria-labelledby="contact-title">
+  <app-section-header headingId="contact-title" [title]="c().contact.title" [lead]="c().contact.lead" />
+
+  <div class="body" appReveal>
+    <div class="direct">
+      <div class="email">
+        <a class="address" [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+        <button type="button" class="copy" (click)="copyEmail()" aria-live="polite">
+          {{ copied() ? c().contact.copied : c().contact.copy }}
+        </button>
+      </div>
+
+      <ul class="channels">
+        <li>
+          <a [href]="profile.linkedin" target="_blank" rel="noopener">
+            <span>LinkedIn</span><span class="handle">/in/jwoliveira</span>
+          </a>
+        </li>
+        <li>
+          <a [href]="profile.github" target="_blank" rel="noopener">
+            <span>GitHub</span><span class="handle">@jvecodev</span>
+          </a>
+        </li>
+        <li>
+          <a [href]="whatsappUrl()" target="_blank" rel="noopener">
+            <span>WhatsApp</span><span class="handle">{{ profile.phone }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <form class="form" (submit)="submit($event)">
+      <label>
+        <span>{{ c().contact.name }}</span>
+        <input type="text" name="name" autocomplete="name" required />
+      </label>
+      <label>
+        <span>{{ c().contact.email }}</span>
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+      <label>
+        <span>{{ c().contact.message }}</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="submit-row">
+        <button class="btn primary" type="submit" [disabled]="status() === 'sending'">
+          {{ status() === 'sending' ? c().contact.sending : c().contact.send }}
+        </button>
+        <p class="status" role="status" [class.error]="status() === 'error'">
+          @switch (status()) {
+            @case ('sent') {
+              {{ c().contact.sent }}
+            }
+            @case ('error') {
+              {{ c().contact.error }}
+            }
+          }
+        </p>
+      </div>
+    </form>
+  </div>
+</section>

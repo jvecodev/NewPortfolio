@@ -1,0 +1,59 @@
+<div class="arch" aria-hidden="true"></div>
+
+<div class="inner">
+  <div class="copy">
+    <p class="greeting">{{ c().hero.greeting }}</p>
+    <h1 class="name">
+      <span class="intro">{{ c().hero.intro }}</span>
+      {{ profile.firstName }}
+    </h1>
+    <p class="workplace">{{ c().hero.workplace }}</p>
+
+    <p class="role">{{ c().hero.role }}</p>
+    <p class="tagline">{{ c().hero.tagline }}</p>
+
+    <div class="actions">
+      <a class="btn light" [href]="profile.resume" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" /></svg>
+        {{ c().hero.resume }}
+      </a>
+      <a class="btn outline" href="#contact">{{ c().hero.contact }}</a>
+    </div>
+
+    <ul class="socials">
+      <li>
+        <a [href]="'mailto:' + profile.email" aria-label="E-mail">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7 8 6 8-6" /></svg>
+        </a>
+      </li>
+      <li>
+        <a [href]="profile.linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-5.04c0-1.2-.02-2.75-1.68-2.75-1.68 0-1.94 1.31-1.94 2.66V21h-4V9.75Z" /></svg>
+        </a>
+      </li>
+      <li>
+        <a [href]="profile.github" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg>
+        </a>
+      </li>
+      <li>
+        <a [href]="whatsappUrl()" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.16-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.05a8.2 8.2 0 0 1-4.2-1.16l-.3-.18-3.06.89.9-2.98-.2-.31a8.17 8.17 0 1 1 6.86 3.74Zm4.49-6.12c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.77.96-.14.17-.28.19-.53.06a6.7 6.7 0 0 1-3.3-2.88c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.66.31 2.77 2.77 0 0 0-.86 2.06 4.8 4.8 0 0 0 1 2.55 11 11 0 0 0 4.21 3.72c1.57.68 2.19.74 2.98.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z" /></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <figure class="globe-wrap">
+    <app-globe
+      [lat]="profile.home.lat"
+      [lon]="profile.home.lon"
+      [photo]="profile.photo"
+      [label]="c().a11y.globe"
+    />
+    <figcaption>
+      <svg viewBox="0 0 60 40" aria-hidden="true"><path d="M54 6 C 40 4, 22 10, 10 30 M10 30 l2 -9 M10 30 l8 -4" /></svg>
+      <span>{{ profile.home.city }}, PR · {{ localTime() }}</span>
+    </figcaption>
+  </figure>
+</div>

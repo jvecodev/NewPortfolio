@@ -1,0 +1,227 @@
+:host {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.card.rag {
+  grid-column: 1 / -1;
+}
+
+header h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.375rem;
+  letter-spacing: -0.02em;
+}
+
+header h3::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+
+header p {
+  max-width: 62ch;
+  margin: 6px 0 0;
+  color: var(--ink-2);
+}
+
+.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  font-family: var(--font-display);
+}
+
+.rag-tall {
+  display: none;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+@media (max-width: 699px) {
+  .rag-wide {
+    display: none;
+  }
+
+  .rag-tall {
+    display: block;
+  }
+}
+
+/* ---------- Shared diagram pieces ---------- */
+.node rect,
+.node path,
+.node ellipse {
+  fill: var(--card);
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+}
+
+.node text {
+  font-size: 14px;
+  font-weight: 600;
+  text-anchor: middle;
+  fill: var(--ink);
+}
+
+.node.llm rect {
+  stroke: var(--amber);
+  stroke-width: 2.5;
+}
+
+.node.answer rect {
+  fill: var(--amber);
+  stroke: var(--amber);
+}
+
+.node.answer text {
+  fill: #1b1306;
+}
+
+.node.db ellipse,
+.node.db path {
+  stroke: var(--amber-deep);
+}
+
+.edge {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.5;
+}
+
+.arrow {
+  fill: var(--ink-3);
+}
+
+/* Data "flowing" along the RAG edges. */
+.flow {
+  fill: none;
+  stroke: var(--amber);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 3 14;
+  animation: flow 1.2s linear infinite;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -17;
+  }
+}
+
+/* Handwritten annotations, whiteboard style. */
+.note {
+  font-family: var(--font-hand);
+  font-size: 22px;
+  font-weight: 700;
+  fill: var(--amber-ink);
+}
+
+.note-line {
+  fill: none;
+  stroke: var(--amber-ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+/* Embedding vector bars. */
+.vec rect {
+  fill: color-mix(in srgb, var(--amber) 55%, transparent);
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: vec 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes vec {
+  from {
+    transform: scaleY(0.45);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Agent messages. */
+.pulse {
+  fill: var(--amber);
+}
+
+/* ML plot. */
+.axis {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+}
+
+.pt.a {
+  fill: var(--amber);
+}
+
+.pt.b {
+  fill: var(--card);
+  stroke: var(--ink-2);
+  stroke-width: 1.8;
+}
+
+.boundary {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 6s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  35%,
+  85% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    display: none;
+  }
+
+  .boundary {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 859px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card {
+    padding: 20px;
+  }
+}

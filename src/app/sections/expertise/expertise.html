@@ -1,0 +1,152 @@
+@let e = c().expertise;
+
+<section class="section" aria-labelledby="expertise-title">
+  <app-section-header headingId="expertise-title" [title]="e.title" />
+
+  <div class="grid">
+    <!-- ================= RAG pipeline ================= -->
+    <article class="card rag" appReveal>
+      <header>
+        <h3>{{ e.rag.title }}</h3>
+        <p>{{ e.rag.text }}</p>
+      </header>
+
+      <svg class="diagram rag-wide" viewBox="0 0 920 270" aria-hidden="true">
+          <defs>
+            <marker id="rag-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" class="arrow" />
+            </marker>
+          </defs>
+
+          <!-- handwritten notes -->
+          <text class="note" x="10" y="24">{{ e.rag.notes.indexing }}</text>
+          <text class="note" x="10" y="160">{{ e.rag.notes.query }}</text>
+          <text class="note" x="544" y="134">{{ e.rag.notes.topK }}</text>
+          <text class="note" x="596" y="262">{{ e.rag.notes.context }}</text>
+          <path class="note-line" d="M650 244 C 640 232, 628 228, 616 218" />
+
+          <!-- edges -->
+          @for (d of ['M130 62 H160', 'M280 62 H310', 'M430 62 H470', 'M530 92 V170', 'M130 192 H160', 'M280 192 H470', 'M590 192 H640', 'M760 192 H790']; track d) {
+            <path class="edge" [attr.d]="d" marker-end="url(#rag-arrow)" />
+            <path class="flow" [attr.d]="d" />
+          }
+
+          <!-- indexing row -->
+          <g class="node"><rect x="10" y="40" width="120" height="44" rx="12" /><text x="70" y="67">{{ e.rag.labels.docs }}</text></g>
+          <g class="node"><rect x="160" y="40" width="120" height="44" rx="12" /><text x="220" y="67">{{ e.rag.labels.chunks }}</text></g>
+          <g class="node"><rect x="310" y="40" width="120" height="44" rx="12" /><text x="370" y="67">{{ e.rag.labels.embeddings }}</text></g>
+          <g class="node db">
+            <path d="M470 40 V82 A60 10 0 0 0 590 82 V40" />
+            <ellipse cx="530" cy="40" rx="60" ry="10" />
+            <text x="530" y="70">{{ e.rag.labels.vectorDb }}</text>
+          </g>
+
+          <!-- query row -->
+          <g class="node"><rect x="10" y="170" width="120" height="44" rx="12" /><text x="70" y="197">{{ e.rag.labels.question }}</text></g>
+          <g class="node"><rect x="160" y="170" width="120" height="44" rx="12" /><text x="220" y="197">{{ e.rag.labels.embedding }}</text></g>
+          <g class="node"><rect x="470" y="170" width="120" height="44" rx="12" /><text x="530" y="197">{{ e.rag.labels.retriever }}</text></g>
+          <g class="node llm"><rect x="640" y="170" width="120" height="44" rx="12" /><text x="700" y="197">{{ e.rag.labels.llm }}</text></g>
+          <g class="node answer"><rect x="790" y="170" width="120" height="44" rx="12" /><text x="850" y="197">{{ e.rag.labels.answer }}</text></g>
+
+          <!-- embedding vectors hint -->
+          <g class="vec">
+            @for (h of [14, 26, 10, 22, 18, 8]; track $index) {
+              <rect [attr.x]="322 + $index * 16" y="100" width="10" [attr.height]="h" rx="3" [style.animation-delay]="$index * 0.15 + 's'" />
+            }
+          </g>
+      </svg>
+
+      <!-- Vertical variant for narrow screens -->
+      <svg class="diagram rag-tall" viewBox="0 0 340 500" aria-hidden="true">
+        <defs>
+          <marker id="rag-arrow-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" class="arrow" />
+          </marker>
+        </defs>
+        <text class="note" x="10" y="24">{{ e.rag.notes.indexing }}</text>
+        <text class="note" x="190" y="24">{{ e.rag.notes.query }}</text>
+        <text class="note" x="156" y="280">{{ e.rag.notes.topK }}</text>
+        <text class="note" x="20" y="352">{{ e.rag.notes.context }}</text>
+        <path class="note-line" d="M150 340 C 180 336, 220 340, 248 336" />
+
+        @for (d of ['M80 84 V110', 'M80 154 V180', 'M80 224 V252', 'M260 84 V110', 'M260 154 V266', 'M260 310 V350', 'M260 394 V430', 'M150 288 H190']; track d) {
+          <path class="edge" [attr.d]="d" marker-end="url(#rag-arrow-v)" />
+          <path class="flow" [attr.d]="d" />
+        }
+
+        <g class="node"><rect x="10" y="40" width="140" height="44" rx="12" /><text x="80" y="67">{{ e.rag.labels.docs }}</text></g>
+        <g class="node"><rect x="10" y="110" width="140" height="44" rx="12" /><text x="80" y="137">{{ e.rag.labels.chunks }}</text></g>
+        <g class="node"><rect x="10" y="180" width="140" height="44" rx="12" /><text x="80" y="207">{{ e.rag.labels.embeddings }}</text></g>
+        <g class="node db">
+          <path d="M10 262 V310 A70 10 0 0 0 150 310 V262" />
+          <ellipse cx="80" cy="262" rx="70" ry="10" />
+          <text x="80" y="295">{{ e.rag.labels.vectorDb }}</text>
+        </g>
+
+        <g class="node"><rect x="190" y="40" width="140" height="44" rx="12" /><text x="260" y="67">{{ e.rag.labels.question }}</text></g>
+        <g class="node"><rect x="190" y="110" width="140" height="44" rx="12" /><text x="260" y="137">{{ e.rag.labels.embedding }}</text></g>
+        <g class="node"><rect x="190" y="266" width="140" height="44" rx="12" /><text x="260" y="293">{{ e.rag.labels.retriever }}</text></g>
+        <g class="node llm"><rect x="190" y="350" width="140" height="44" rx="12" /><text x="260" y="377">{{ e.rag.labels.llm }}</text></g>
+        <g class="node answer"><rect x="190" y="430" width="140" height="44" rx="12" /><text x="260" y="457">{{ e.rag.labels.answer }}</text></g>
+      </svg>
+    </article>
+
+    <!-- ================= Multi-agent graph ================= -->
+    <article class="card" appReveal>
+      <header>
+        <h3>{{ e.agents.title }}</h3>
+        <p>{{ e.agents.text }}</p>
+      </header>
+
+      <svg class="diagram" viewBox="0 0 440 280" aria-hidden="true">
+        @for (a of agents; track a.key) {
+          <path class="edge" [attr.d]="'M220 140 L' + a.x + ' ' + a.y" />
+        }
+        @for (a of agents; track a.key) {
+          <circle class="pulse" r="4">
+            <animateMotion
+              dur="3.2s"
+              repeatCount="indefinite"
+              [attr.begin]="a.delay"
+              keyPoints="0;1;0"
+              keyTimes="0;0.5;1"
+              calcMode="linear"
+              [attr.path]="'M220 140 L' + a.x + ' ' + a.y"
+            />
+          </circle>
+        }
+        @for (a of agents; track a.key) {
+          <g class="node">
+            <rect [attr.x]="a.x - 70" [attr.y]="a.y - 20" width="140" height="40" rx="12" />
+            <text [attr.x]="a.x" [attr.y]="a.y + 5">{{ e.agents.labels[a.key] }}</text>
+          </g>
+        }
+        <g class="node llm">
+          <rect x="145" y="118" width="150" height="44" rx="12" />
+          <text x="220" y="145">{{ e.agents.labels.orchestrator }}</text>
+        </g>
+      </svg>
+    </article>
+
+    <!-- ================= ML classification ================= -->
+    <article class="card" appReveal>
+      <header>
+        <h3>{{ e.ml.title }}</h3>
+        <p>{{ e.ml.text }}</p>
+      </header>
+
+      <svg class="diagram" viewBox="0 0 440 280" aria-hidden="true">
+        <path class="axis" d="M40 20 V260 H430" />
+        @for (p of classA; track $index) {
+          <circle class="pt a" [attr.cx]="p.x" [attr.cy]="p.y" r="5.5" />
+        }
+        @for (p of classB; track $index) {
+          <circle class="pt b" [attr.cx]="p.x" [attr.cy]="p.y" r="5.5" />
+        }
+        <path class="boundary" pathLength="1" d="M60 60 C 180 120, 240 160, 400 250" />
+        <text class="note" x="64" y="34">{{ e.ml.note }}</text>
+        <path class="note-line" d="M110 42 C 112 52, 108 60, 100 72" />
+      </svg>
+    </article>
+  </div>
+</section>

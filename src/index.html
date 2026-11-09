@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>João Vitor Oliveira — ML/AI Engineer</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ML/AI Engineer em Curitiba. LLMs, RAG e agentes de IA integrados a sistemas reais com Python, FastAPI e Angular."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffb637" />
+    <meta property="og:title" content="João Vitor Oliveira — ML/AI Engineer" />
+    <meta property="og:description" content="LLMs · RAG · AI Agents — Curitiba, Brasil" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="assets/icon/terra.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter+Tight:ital,wght@0,300..900;1,300..900&display=swap"
+    />
+
+    <script>
+      // Apply the saved/system theme before first paint to avoid a flash.
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem('portfolio.theme');
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
