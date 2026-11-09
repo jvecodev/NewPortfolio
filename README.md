@@ -12,6 +12,3 @@ O foco está em oferecer uma interface responsiva, limpa e agradável, com eleme
   
 **Controle de versão:** 
 * Git e GitHub
-
-##
-🔗 Acompanhe o planejamento e o andamento do projeto pelo Trello: [Clique aqui para acessar o board](https://trello.com/b/M23zfQnn/professional-profile)
